@@ -19,7 +19,7 @@ gcc -std=c99 -o lread && sudo cp lread /usr/bin
 ```
 You may want to install the utility to some other directory than /usr/bin. In this case, make sure that the appropriate directory is sourced by introducing the following line in your .bashrc:
 ```
-export PATH=PATH:/path/to/lread/location
+export PATH=$PATH:/path/to/lread/location
 ```
 
 
@@ -35,7 +35,7 @@ lread --file log.txt --node node-356.master1 --output mess.356.1.txt
 - the flag `--output` specifies the text file to which the messages extracted from the log file will be saved.
 
 
-A brief recap on how the tool works can be found by typing
+A brief recap on how the tool works can be found by typing:
 ```
 lread --help
 ```
