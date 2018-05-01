@@ -3,7 +3,10 @@ Log File Reader
 
 This repository contains the source code for the `lread` utility, useful to parse efficiently the (possibly very large) log data coming from the cluster's computations.
 
-In particular, the tool is useful to read a log file and keep only the messages coming from a certain computing node.
+In particular, the tool is useful to parse a log file and:
+
+- keep only the messages coming from a certain computing node;
+- keep all the messages, and reorder them according to the computing node to which each message belongs.
 
 Installation
 ------------
@@ -30,16 +33,17 @@ The typical call to this utility is:
 lread --file log.txt --node node-356.master1 --output mess.356.1.txt
 ```
 
-- the flag `--file` specifies the path to a log file;
-- the flag `--node` specifies the name of the node whose output messages should be saved.;
-- the flag `--output` specifies the text file to which the messages extracted from the log file will be saved.
+- the flag `--file` specifies the path to a log file (log.txt in the example);
+- the flag `--node` specifies the name of the node whose output messages should be saved (node-356.master1 in the example);
+- the flag `--output` specifies the text file to which the messages extracted from the log file will be saved (mess.356.1.txt in the example).
+
 The order of the parameters does not matter.
 
 If instead of a single node you want to sort the output of all the nodes (one file for each node), call:
 ```
 lread --file log.txt --node all
 ```
-Careful, this can produce a lot of files (each file is named as the corresponding node).
+Careful, this option can produce a lot of files (each file is named as the corresponding node).
 
 
 A brief recap on how the tool works can be found by typing:
