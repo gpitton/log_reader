@@ -31,8 +31,15 @@ lread --file log.txt --node node-356.master1 --output mess.356.1.txt
 ```
 
 - the flag `--file` specifies the path to a log file;
-- the flag `--node` specifies the name of the node whose output messages should be saved;
+- the flag `--node` specifies the name of the node whose output messages should be saved.;
 - the flag `--output` specifies the text file to which the messages extracted from the log file will be saved.
+The order of the parameters does not matter.
+
+If instead of a single node you want to sort the output of all the nodes (one file for each node), call:
+```
+lread --file log.txt --node all
+```
+Careful, this can produce a lot of files (each file is named as the corresponding node).
 
 
 A brief recap on how the tool works can be found by typing:
